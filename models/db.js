@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+require('posts');
 
 var dbURI = 'mongodb://localhost/CleanBlog';
 mongoose.connect(dbURI, { useMongoClient: true });
