@@ -1,7 +1,7 @@
-var mongoose = require('mongoose');
-require('posts');
+const mongoose = require('mongoose');
+require('./posts');
 
-var dbURI = 'mongodb://localhost/CleanBlog';
+let dbURI = 'mongodb://localhost/CleanBlog';
 mongoose.connect(dbURI, { useMongoClient: true });
 
 mongoose.connection.on('connected', function () {
@@ -14,7 +14,7 @@ mongoose.connection.on('disconnected', function () {
   console.log('Mongoose disconnected');
 });
 
-var gracefulShutdown = function (msg, callback) {
+let gracefulShutdown = function (msg, callback) {
   mongoose.connection.close(function () {
     console.log('Mongoose disconnected through ' + msg);
     callback();
