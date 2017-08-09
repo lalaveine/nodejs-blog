@@ -52,7 +52,7 @@ module.exports.postsReadOne = function (req, res) {
           return;
         } else if (err) {
           console.log(err);
-          sendJsonResponse(res, 404, err);
+          sendJsonResponse(res, 400, err);
           return;
         }
         sendJsonResponse(res, 200, post);
@@ -63,7 +63,7 @@ module.exports.postsList = function (req, res) {
   PostModel.find(function (err, posts) {
     if (err) {
       console.log(err);
-      sendJsonResponse(res, 404, err);
+      sendJsonResponse(res, 400, err);
     } else {
       sendJsonResponse(res, 200, posts);
     }
@@ -81,7 +81,7 @@ module.exports.postsUpdateOne = function (req, res) {
           return;
         } else if (err) {
           console.log(err);
-          sendJsonResponse(res, 404, err);
+          sendJsonResponse(res, 400, err);
           return;
         }
 
@@ -97,7 +97,7 @@ module.exports.postsUpdateOne = function (req, res) {
         post.save(function(err, updatedPost) {
           if (err) {
             console.log(err);
-            sendJsonResponse(res, 404, err);
+            sendJsonResponse(res, 400, err);
           }
           sendJsonResponse(res, 200, updatedPost);
         });
@@ -110,10 +110,10 @@ module.exports.postsDeleteOne = function (req, res) {
     PostModel
       .findByIdAndRemove(postId)
       .exec(
-        function(err, post) {
+        function(err) {
           if (err) {
             console.log(err);
-            sendJsonResponse(res, 404, err);
+            sendJsonResponse(res, 400, err);
             return;
           }
           sendJsonResponse(res, 204, null);

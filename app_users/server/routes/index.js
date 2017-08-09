@@ -10,7 +10,7 @@ router.get('/', ctrlMain.home);
 router.get('/about', ctrlMain.about);
 
 /* GET 'post' page. */
-router.get('/post', ctrlMain.post);
+router.get('/posts/:postId', ctrlMain.post);
 
 /* GET 'contact' page. */
 router.get('/contact', ctrlMain.contact);

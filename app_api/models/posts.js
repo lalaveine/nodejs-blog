@@ -11,6 +11,7 @@ let postSchema = new mongoose.Schema({
   },
   postUrl: { type: String, required: true, index: { unique: true } },
   lastUpdated: { type: String, "default": "Never" },
+  editedBy: { type: String },
   content: { type: String, required: true }
 });
 

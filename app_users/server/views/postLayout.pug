@@ -45,20 +45,6 @@ html(lang='en')
         // /.navbar-collapse
       // /.container
 
-    // Page Header
-    // Set your background image for this header on the line below.
-    header.intro-header(style="background-image: url('" + pageHeader.background + "')")
-      .container
-        .row
-          .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
-            .post-heading
-              h1= pageHeader.heading
-              h2.subheading= pageHeader.subheading
-              span.meta
-                | Posted by&nbsp;
-                a(href='#') #{pageHeader.posted_by}
-                |  on #{pageHeader.posted_on}
-
     block content
 
     // Footer

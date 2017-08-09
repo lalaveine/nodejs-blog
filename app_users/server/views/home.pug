@@ -7,13 +7,13 @@ block content
       .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
         each post in posts
           .post-preview
-            a(href='/post')
-              h2.post-title= post.heading
-              h3.post-subtitle= post.subheading
+            a(href= 'posts/' + post._id)
+              h2.post-title= post.pageHeader.heading
+              h3.post-subtitle= post.pageHeader.subheading
             p.post-meta
               | Posted by&nbsp;
-              a(href='#') #{post.posted_by}
-              |  on #{post.posted_on}
+              a(href='#') #{post.pageHeader.postedBy}
+              |  on #{post.pageHeader.postedOn}
           hr
 
         // Pager
