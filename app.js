@@ -6,6 +6,10 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 require('./app_api/models/db');
 
+let array = ['1', '2'];
+
+let { firstElem } = array;
+
 const route = require('./app_users/server/routes/index');
 const routeApi = require('./app_api/routes');
 
